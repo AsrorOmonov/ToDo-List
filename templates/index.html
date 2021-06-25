@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+{#    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>#}
+{#    <script>#}
+{#        $(document).ready(function () {#}
+{#            $('#submit1').click(function () {#}
+{#                alert("JQuery Running!");#}
+{#            });#}
+{#        });#}
+{#    </script>#}
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Tasks</th>
+            <th scope="col">Done</th>
+            <th scope="col">Created_at</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for task in data %}
+            <tr>
+                <th scope="row">{{ task.id }}</th>
+                {% if task.done %}
+                    <td><s>{{ task.title }}</s></td>
+                {% else %}
+                    <td>{{ task.title }}</td>
+                {% endif %}
+
+
+                {% if task.done %}
+                    <a href="#false"><td  class="btn btn-success py-2">   {{ task.done }} <i class="fa fa-check"></i></td></a> 
+                {% else %}
+                    <a href=""></a><td id="false" class="btn btn-danger py-2"><i class="fa fa-times"></i>
+                {% endif %}
+                </td>
+                <td>{{ task.created_at }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+
+    </table>
+
+
+{% endblock %}
