@@ -1,0 +1,13 @@
+
+    <form method="post">
+    <div class="container justify-content-between">
+        <div class="body_card">
+            {% csrf_token %}
+            {{ form.as_p }}
+        </div>
+    </div>
+
+        <a href="/"><button class="btn btn-success btn-sm" type="button">Back</button></a>
+
+    </form>
+

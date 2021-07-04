@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,10 +16,13 @@
 </head>
 <body>
 
-<div class="container">
+<div class="container text-right">
     <form>
-        <input value="{{ request.GET.q }}" placeholder="Enter the book name" name="q" type="text">
-        <button class="btn btn-success py-2" type="submit">ok</button>
+        <input value="{{ request.GET.q }}" placeholder="Enter the task here" name="q" type="text">
+        <button class="btn btn-success btn-sm" type="submit">Search</button>
+        <a href="/create/">
+            <button class="btn btn-info btn-sm" type="button">create</button>
+        </a>
     </form>
 
     {% block content %}

@@ -2,41 +2,35 @@
 {% load static %}
 
 {% block content %}
-{#    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>#}
-{#    <script>#}
-{#        $(document).ready(function () {#}
-{#            $('#submit1').click(function () {#}
-{#                alert("JQuery Running!");#}
-{#            });#}
-{#        });#}
-{#    </script>#}
+    {#    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>#}
+    {#    <script>#}
+    {#        $(document).ready(function () {#}
+    {#            $('#submit1').click(function () {#}
+    {#                alert("JQuery Running!");#}
+    {#            });#}
+    {#        });#}
+    {#    </script>#}
     <table class="table table-bordered">
         <thead>
         <tr>
             <th scope="col">ID</th>
             <th scope="col">Tasks</th>
-            <th scope="col">Done</th>
             <th scope="col">Created_at</th>
+            <th scope="col">Action</th>
         </tr>
         </thead>
         <tbody>
         {% for task in data %}
             <tr>
                 <th scope="row">{{ task.id }}</th>
-                {% if task.done %}
-                    <td><s>{{ task.title }}</s></td>
-                {% else %}
-                    <td>{{ task.title }}</td>
-                {% endif %}
-
-
-                {% if task.done %}
-                    <a href="#false"><td  class="btn btn-success py-2">   {{ task.done }} <i class="fa fa-check"></i></td></a> 
-                {% else %}
-                    <a href=""></a><td id="false" class="btn btn-danger py-2"><i class="fa fa-times"></i>
-                {% endif %}
-                </td>
+                <td>{{ task.title }}</td>
                 <td>{{ task.created_at }}</td>
+                <td><a href="delete/">
+                    <button onclick="return confirm('U completed the task ?')" class="btn btn-danger btn-sm" type="button">Delete</button>
+                </a>
+                    <a href="edit/{{ task.pk }}/"><button class="btn btn-primary btn-sm" type="button">Update</button></a>
+
+                </td>
             </tr>
         {% endfor %}
         </tbody>
