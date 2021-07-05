@@ -13,7 +13,7 @@ def index(request):
     q = request.GET.get('q')
 
     if q:
-        data = TaskModel.objects.filter(Q(title__icontains=q)).order_by('id')
+        data = TaskModel.objects.filter(Q(title__icontains=q)).order_by('-id')
     else:
         data = TaskModel.objects.all()
 
