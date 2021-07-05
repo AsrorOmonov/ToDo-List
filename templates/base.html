@@ -16,7 +16,7 @@
 </head>
 <body>
 
-<div class="container text-right">
+<div class="container text-center">
     <form>
         <input value="{{ request.GET.q }}" placeholder="Enter the task here" name="q" type="text">
         <button class="btn btn-success btn-sm" type="submit">Search</button>
@@ -24,8 +24,11 @@
             <button class="btn btn-info btn-sm" type="button">create</button>
         </a>
     </form>
+    <br>
+    <br>
 
     {% block content %}
+
     {% endblock content %}
 </div>
 <!-- JQuery -->

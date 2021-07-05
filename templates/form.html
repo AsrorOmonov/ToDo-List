@@ -1,13 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
 
     <form method="post">
-    <div class="container justify-content-between">
-        <div class="body_card">
-            {% csrf_token %}
-            {{ form.as_p }}
+        <div class="container justify-content-between">
+            <div class="body_card">
+                {% csrf_token %}
+                {{ form.as_p }}
+            </div>
         </div>
-    </div>
 
-        <a href="/"><button class="btn btn-success btn-sm" type="button">Back</button></a>
-
+        <button class="btn btn-success btn-sm" type="submit">Save</button>
     </form>
+
+{% endblock %}
 

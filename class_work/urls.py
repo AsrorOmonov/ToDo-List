@@ -14,5 +14,4 @@ urlpatterns = [
     path('create/', create),
     path('delete/', delete),
     path('edit/<int:pk>/', edit)
-
 ]
